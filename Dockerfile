@@ -4,7 +4,7 @@ RUN mkdir /usr/src/app
 WORKDIR /usr/src/app
 
 ADD package.json /usr/src/app/package.json
-RUN npm install nodemon -g
+RUN npm install forever nodemon -g
 
 RUN npm install
 EXPOSE 3000
