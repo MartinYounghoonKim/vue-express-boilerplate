@@ -1,0 +1,12 @@
+version: '2'
+services:
+    frontend:
+        hostname: vue-express-boilerplate
+        working_dir: /usr/src/app
+        build:
+            context: ./
+        ports:
+            - "3000:3000"
+        restart: always
+        volumes:
+          - "./:/usr/src/app"
