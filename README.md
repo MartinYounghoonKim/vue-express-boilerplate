@@ -7,8 +7,10 @@
 * nodemon
 
 ## Features
-* Express Server
-* VueJS
+* Express Server@4.16.2
+* VueJS@2.5.2
+* webpack-dev-middleware@2.0.6
+* webpack-dev-server@2.9.1
 
 ## Folder directory
 
@@ -42,6 +44,8 @@
 └── test/   
 ```
 
+## Reference
+* [Setup Express server with Webpack dev middleware to using HMR]()
 ## Build Setup
 
 ``` bash
