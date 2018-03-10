@@ -1,6 +1,46 @@
 # vue-express-boilerplate
 
-> A Vue.js project
+> A Vue.js project with Express server
+
+## Requirement
+* forever
+* nodemon
+
+## Features
+* Express Server
+* VueJS
+
+## Folder directory
+
+```
+┌── index.html/
+│
+├── build/    
+│   ├── build.js
+│   ├── check-versions.js
+│   ├── dev.server.config.js
+│   ├── utils.js
+│   ├── vue-loader.config.js
+│   ├── webpack.base.conf.js
+│   ├── webpack.dev.conf.js
+│   └── webpack.prod.conf.js
+│
+├── bin/
+│   └── server.js
+│
+├── config/
+│
+├── logs/    
+│   ├── error.log
+│   ├── out.log
+│   └── forever.log
+│
+├── src/
+│
+├── static/
+│
+└── test/   
+```
 
 ## Build Setup
 
