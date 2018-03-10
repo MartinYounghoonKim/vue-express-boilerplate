@@ -1,0 +1,85 @@
+{
+    "extends": [
+        "eslint:recommended"
+    ],
+    "plugins": [
+        "vue"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 7,
+        "sourceType": "module",
+        "parser": "babel-eslint"
+    },
+    "rules": {
+        "arrow-parens": 0,
+        "semi": [
+            "error",
+            "always"
+        ],
+        "brace-style": [
+            "error",
+            "1tbs"
+        ],
+        "no-multiple-empty-lines": [
+            "error",
+            {
+                "max": 2,
+                "maxBOF": 1
+            }
+        ],
+        "indent": [
+            "error",
+            4,
+            {
+                "SwitchCase": 1
+            }
+        ],
+        "no-undef": "error",
+        "vue/jsx-uses-vars": 2,
+        "curly": [
+            "error",
+            "all"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "comma-dangle": [
+            "error",
+            {
+                "arrays": "never",
+                "objects": "always-multiline",
+                "imports": "never",
+                "exports": "never",
+                "functions": "never"
+            }
+        ],
+        "object-curly-spacing": [
+            "error",
+            "always"
+        ],
+        "space-in-parens": [
+            "error",
+            "never"
+        ],
+        "space-before-function-paren": [
+            "error",
+            "always"
+        ],
+        "space-before-blocks": [
+            "error",
+            "always"
+        ],
+        "space-infix-ops": [
+            "error",
+            {
+                "int32Hint": false
+            }
+        ],
+        "no-alert": "error",
+        "no-dupe-args": "error",
+        "no-duplicate-case": "error",
+        "no-duplicate-imports": "error",
+        "no-empty": "error"
+    }
+}
