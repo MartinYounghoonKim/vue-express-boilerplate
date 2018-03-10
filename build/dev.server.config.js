@@ -1,36 +1,59 @@
-var Webpack = require('webpack');
-var path = require('path');
-var nodeModulesPath = path.resolve(__dirname, 'node_modules');
-var buildPath = path.resolve(__dirname, 'public', 'build');
-var mainPath = path.resolve(__dirname, 'app', 'main.js');
+const webpack = require('webpack');
+const path = require('path');
+const merge = require('webpack-merge');
+const baseWebpackConfig = require('./webpack.base.conf');
+const mainPath = path.resolve(__dirname, 'app', 'main.js');
+// var nodeModulesPath = path.resolve(__dirname, 'node_modules');
+// var buildPath = path.resolve(__dirname, 'public', 'build');
 
-var config = {
-    devtool: 'eval',
+//
+// var config = {
+//     devtool: 'eval',
+//     entry: [
+//         'webpack/hot/dev-server',
+//         'webpack-dev-server/client?http://localhost:8080',
+//         mainPath
+//     ],
+//     output: {
+//         path: buildPath,
+//         filename: 'bundle.js',
+//         publicPath: '/build/'
+//     },
+//     module: {
+//         loaders: [
+//             {
+//                 test: /\.js$/,
+//                 loader: 'babel',
+//                 exclude: [nodeModulesPath]
+//             },
+//             {
+//                 test: /\.css$/,
+//                 loader: 'style!css'
+//             }
+//
+//         ]
+//     },
+//     plugins: [new Webpack.HotModuleReplacementPlugin()]
+// };
+//
+// module.exports = config;
+
+const devWebpackConfig = merge(baseWebpackConfig, {
     entry: [
-        'webpack/hot/dev-server',
-        'webpack-dev-server/client?http://localhost:8080',
-        mainPath
+        'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
+        './src/main.js',
     ],
     output: {
-        path: buildPath,
+        path: path.join(__dirname, 'www'),
         filename: 'bundle.js',
-        publicPath: '/build/'
+        publicPath: '/dist/',
     },
-    module: {
-        loaders: [
-            {
-                test: /\.js$/,
-                loader: 'babel',
-                exclude: [nodeModulesPath]
-            },
-            {
-                test: /\.css$/,
-                loader: 'style!css'
-            }
+    plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoEmitOnErrorsPlugin(),
+    ],
+});
 
-        ]
-    },
-    plugins: [new Webpack.HotModuleReplacementPlugin()]
-};
 
-module.exports = config;
+
+module.exports = devWebpackConfig;
