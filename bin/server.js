@@ -16,7 +16,6 @@ const port = isProduction ? process.env.PORT : 3000;
 
 const fs = require('fs');
 
-
 if (!isProduction) {
     /**
      * @description webpack HMR module
