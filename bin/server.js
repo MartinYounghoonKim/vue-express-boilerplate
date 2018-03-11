@@ -6,6 +6,8 @@ const path = require('path');
 
 const app = express();
 
+const http = require('http');
+const server = http.createServer(app);
 /**
  * @description env settings
  */
@@ -14,7 +16,7 @@ const port = isProduction ? process.env.PORT : 3000;
 const publicPath = path.resolve(__dirname, 'dist');
 
 const fs = require('fs');
-app.use(express.static( "dist"));
+
 
 if (!isProduction) {
     /**
@@ -29,7 +31,7 @@ if (!isProduction) {
     const middleware = webpackDevMiddleware(compiler, {
         noInfo: true,
         hot: true,
-        publicPath: '/dist/',
+        publicPath: publicPath,
         filename: 'bundle.js',
         quiet: false,
         lazy: false,
@@ -59,34 +61,11 @@ if (!isProduction) {
         res.send(template);
     });
 }
+app.use(express.static( "dist"));
 
-
-const server = app.listen(3000, function() {
+server.listen(port, function() {
     const host = server.address().address;
     const port = server.address().port;
 
     console.log(`Express server has started on port:${host}:${port}`);
 });
-
-
-// const bodyParser = require('body-parser');
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: false }));
-//
-// const http = require('http');
-// const server = http.createServer(app);
-//
-// app.get('*', function response(req, res) {
-//     res.send(webpackConfig)
-//     res.end();
-// });
-//
-// server.listen(port, () => {
-//     console.log(`Express server has started on port:${port}`);
-// });
-
-
-
-
-
-
