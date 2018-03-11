@@ -13,7 +13,6 @@ const server = http.createServer(app);
  */
 const isProduction = process.env.NODE_ENV === 'production';
 const port = isProduction ? process.env.PORT : 3000;
-const publicPath = path.resolve(__dirname, 'dist');
 
 const fs = require('fs');
 
@@ -31,7 +30,7 @@ if (!isProduction) {
     const middleware = webpackDevMiddleware(compiler, {
         noInfo: true,
         hot: true,
-        publicPath: publicPath,
+        publicPath: '/dist/',
         filename: 'bundle.js',
         quiet: false,
         lazy: false,
@@ -63,7 +62,7 @@ if (!isProduction) {
 }
 app.use(express.static( "dist"));
 
-server.listen(port, function() {
+server.listen(3000, function() {
     const host = server.address().address;
     const port = server.address().port;
 
