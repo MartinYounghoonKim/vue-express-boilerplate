@@ -12,7 +12,7 @@ const server = http.createServer(app);
  * @description env settings
  */
 const isProduction = process.env.NODE_ENV === 'production';
-const port = isProduction ? process.env.PORT : 3000;
+const port = isProduction ? process.env.PORT : 4000;
 
 const fs = require('fs');
 
