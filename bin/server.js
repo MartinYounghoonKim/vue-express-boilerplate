@@ -61,7 +61,7 @@ if (!isProduction) {
 }
 app.use(express.static( "dist"));
 
-server.listen(3000, function() {
+server.listen(port, function() {
     const host = server.address().address;
     const port = server.address().port;
 
