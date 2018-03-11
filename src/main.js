@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import App from './App';
 import router from './router';
-// import store from './stores/index';
+import store from './stores/index';
 Vue.config.productionTip = false;
 
 if (module.hot) {
@@ -12,7 +12,7 @@ if (module.hot) {
 new Vue({
     el: '#app',
     router,
-    // store,
+    store,
     components: {
         App,
     },
