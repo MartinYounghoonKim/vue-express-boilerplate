@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/MartinYounghoonKim/vue-express-boilerplate.svg?branch=master)](https://travis-ci.org/MartinYounghoonKim/vue-express-boilerplate)
+
 # vue-express-boilerplate
 
 > A Vue.js project with Express server
