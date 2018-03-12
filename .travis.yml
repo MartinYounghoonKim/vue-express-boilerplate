@@ -7,3 +7,5 @@ before_install:
 branches:
   only:
     - master
+script:
+  npm run build
