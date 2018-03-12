@@ -2,9 +2,10 @@ language: node_js
 node_js:
   - "6"
 before_install:
-  - npm install forever nodemon -g
+  - npm install jest -g
 branches:
   only:
     - master
 script:
-  npm run build
+  - npm run build
+  - npm run unit
