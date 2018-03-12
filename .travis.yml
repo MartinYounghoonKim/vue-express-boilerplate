@@ -1,1 +1,4 @@
 language: ruby
+node_js:
+  - "6"
+  - "7"
