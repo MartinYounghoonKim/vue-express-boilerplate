@@ -48,7 +48,7 @@
 ```
 
 ## Reference
-* [Setup Express server with Webpack dev middleware to using HMR]()
+* [Setup Express server with Webpack dev middleware to using HMR](http://blog.martinwork.co.kr/nodejs/2018/03/10/setting-express-with-hmr.html)
 
 ## Build Docker image and container
 ```bash
